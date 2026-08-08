@@ -1,6 +1,9 @@
 (function () {
   "use strict";
 
+  // TODO: cole aqui o link real de checkout da Hotmart
+  var HOTMART_CHECKOUT_URL = "https://pay.hotmart.com/SEU-LINK-AQUI";
+
   // ---- visitor id (used by the tracking endpoints) ----
   function getVisitorId() {
     var id = localStorage.getItem("visitorId");
@@ -130,12 +133,12 @@
     });
   });
 
-  // ---- CTAs de compra: tracking + rolar até o preço ----
+  // ---- CTAs de compra: tracking + pixel + redireciona pro checkout da Hotmart ----
   document.querySelectorAll(".btn-cta").forEach(function (btn) {
     btn.addEventListener("click", function () {
       track("/api/track-click");
-      var target = document.querySelector(".price-block") || document.querySelector(".final-price-card");
-      if (target) target.scrollIntoView({ behavior: "smooth", block: "center" });
+      if (typeof fbq === "function") fbq("track", "InitiateCheckout");
+      window.location.href = HOTMART_CHECKOUT_URL;
     });
   });
 })();
