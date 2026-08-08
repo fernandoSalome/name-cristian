@@ -72,11 +72,18 @@
   var nextBtn = document.querySelector(".carousel-next");
   var slideIndex = 0;
 
+  function escapeHtml(str) {
+    return str.replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
   function previewSlides(name) {
+    var n = "<strong>" + escapeHtml(name) + "</strong>";
     return [
-      "Era uma vez uma criança muito especial, chamada " + name + ". Este livro é sobre uma descoberta incrível que " + name + " fez... Uma descoberta que mudou tudo!",
-      name + " abre os olhos e vê seu próprio nome brilhando na primeira página, ao lado da estrela que guiou os pastores até Jesus.",
-      "Assim como os discípulos, " + name + " aprende que coragem e fé andam juntas — em cada página, um novo passo da jornada.",
+      "Era uma vez uma criança muito especial, chamada " + n + ". Este livro é sobre uma descoberta incrível que " + n + " fez... Uma descoberta que mudou tudo!",
+      "Outras vezes, quando um trovão fazia \"BUUUM!\", " + n + " sentia um medinho lá no fundo. Para quem podia pedir ajuda quando estava com medo?",
+      n + " perguntou: \"Quem é você?\" A voz respondeu: \"Eu sou Jesus. Eu te amo mais do que todas as estrelas do céu.\"",
     ];
   }
 
@@ -84,7 +91,7 @@
     if (!previewCard) return;
     var name = sessionStorage.getItem("childName") || "Nome";
     var slides = previewSlides(name);
-    previewCard.textContent = slides[slideIndex % slides.length];
+    previewCard.innerHTML = slides[slideIndex % slides.length];
   }
 
   if (prevBtn && nextBtn) {
@@ -113,17 +120,4 @@
       if (target) target.scrollIntoView({ behavior: "smooth", block: "center" });
     });
   });
-
-  // ---- contador regressivo (visual) ----
-  var countdownEl = document.getElementById("countdown");
-  if (countdownEl) {
-    var remaining = 24 * 60 * 60; // 24h em segundos
-    setInterval(function () {
-      remaining = remaining > 0 ? remaining - 1 : 24 * 60 * 60;
-      var h = String(Math.floor(remaining / 3600)).padStart(2, "0");
-      var m = String(Math.floor((remaining % 3600) / 60)).padStart(2, "0");
-      var s = String(remaining % 60).padStart(2, "0");
-      countdownEl.textContent = h + ":" + m + ":" + s;
-    }, 1000);
-  }
 })();

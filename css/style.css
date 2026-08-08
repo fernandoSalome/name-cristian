@@ -101,6 +101,7 @@ h1, h2, h3 { color: var(--navy); line-height: 1.3; }
 .hero-section { padding-top: 56px; }
 .hero-section h1 { font-size: 28px; margin-bottom: 12px; }
 .hero-section .subtext { font-size: 16px; margin-bottom: 8px; }
+.img-caption { font-size: 13px; color: var(--gray); margin: -12px 0 8px; }
 .btn-cta { margin: 24px auto 0; }
 
 .pain-section, .turn-section { background: #eef6fd; }
@@ -125,25 +126,54 @@ h1, h2, h3 { color: var(--navy); line-height: 1.3; }
 .quote-white { background: #fff; box-shadow: var(--shadow); }
 .quote-white p { margin: 0; }
 .quote-sub { color: var(--gray); margin-top: 6px !important; }
+.quote-label { font-weight: 600; color: var(--navy); margin: 16px 0 -4px; }
 .quote-accent { background: var(--pink); border: 1px solid var(--pink-border); }
 
 .preview-section { background: var(--cream); }
 .preview-section h2 { font-size: 24px; margin-bottom: 8px; }
 .preview-carousel { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 24px; }
 .preview-card {
+  position: relative;
+  overflow: hidden;
   width: 100%;
   max-width: 340px;
-  min-height: 380px;
+  min-height: 500px;
   border-radius: var(--radius);
-  background: radial-gradient(circle at 20% 20%, #2b4a7a, #0f2545 70%);
+  background:
+    radial-gradient(1.5px 1.5px at 15% 12%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 35% 28%, #fff, transparent),
+    radial-gradient(1px 1px at 55% 8%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 70% 22%, #fff, transparent),
+    radial-gradient(1px 1px at 85% 35%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 25% 45%, #fff, transparent),
+    radial-gradient(1px 1px at 92% 15%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 10% 60%, #fff, transparent),
+    radial-gradient(1px 1px at 60% 55%, #fff, transparent),
+    linear-gradient(160deg, #4a7fb5 0%, #2b5687 35%, #12335c 70%, #0a1f3d 100%);
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 32px;
+  padding: 40px 32px;
   box-shadow: var(--shadow);
 }
-.preview-text { font-size: 18px; font-weight: 600; line-height: 1.5; }
+.preview-star {
+  position: absolute;
+  color: #ffe9a8;
+  text-shadow: 0 0 12px rgba(255, 233, 168, 0.9), 0 0 24px rgba(255, 233, 168, 0.5);
+}
+.preview-star-big { font-size: 40px; }
+.preview-star-1 { top: 10%; right: 12%; }
+.preview-star-2 { top: 22%; left: 14%; font-size: 26px; }
+.preview-text {
+  position: relative;
+  font-family: "Patrick Hand", "Segoe UI", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.5;
+  z-index: 1;
+}
+.preview-text strong, .preview-text b { font-weight: 700; }
 .carousel-arrow {
   background: none;
   border: none;
@@ -188,6 +218,7 @@ h1, h2, h3 { color: var(--navy); line-height: 1.3; }
   max-width: 420px;
   margin: 0 auto;
 }
+.price-kicker { color: var(--blue); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; }
 .price-label { font-weight: 600; margin-bottom: 4px; }
 .price-old { color: var(--gray); text-decoration: line-through; margin-bottom: 8px; }
 .price-cta-label { color: var(--gray); font-size: 14px; }
@@ -217,7 +248,8 @@ h1, h2, h3 { color: var(--navy); line-height: 1.3; }
   max-width: 420px;
   margin: 24px auto 0;
 }
-.countdown { font-size: 22px; font-weight: 700; color: var(--blue-dark); margin-bottom: 8px; }
+.final-price-card .price-old { margin-bottom: 4px; }
+.final-price-card .fine-print { margin-bottom: 16px; }
 .benefit-list { list-style: none; text-align: left; margin: 16px 0; }
 .benefit-list li { padding: 6px 0; padding-left: 24px; position: relative; color: var(--navy); }
 .benefit-list li::before { content: "✓"; position: absolute; left: 0; color: #2f9e44; font-weight: 700; }
@@ -229,6 +261,11 @@ h1, h2, h3 { color: var(--navy); line-height: 1.3; }
   margin: 16px 0;
   text-align: center;
 }
+
+.closing-section { background: linear-gradient(160deg, #12335c, #0a1f3d); color: #fff; padding: 56px 20px; }
+.closing-section h2 { color: #fff; font-size: 24px; margin-bottom: 8px; }
+.closing-section .subtext { color: #cbd5e1; margin-bottom: 24px; }
+.closing-section .fine-print { color: #94a3b8; margin-top: 12px; }
 
 .faq-section h2 { font-size: 24px; margin-bottom: 24px; }
 .faq-list { text-align: left; }
