@@ -46,19 +46,6 @@ h1, h2, h3 { color: var(--navy); line-height: 1.3; }
 
 .fine-print { color: var(--gray); font-size: 13px; }
 
-/* Placeholder de imagem */
-.img-placeholder {
-  background: #e2e8f0;
-  border: 2px dashed #94a3b8;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #64748b;
-  font-weight: 700;
-  font-size: 32px;
-}
-.bonus-img { width: 100%; height: 120px; margin-bottom: 8px; font-size: 22px; }
 .bonus-photo {
   width: 100%;
   aspect-ratio: 3 / 4;
