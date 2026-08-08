@@ -89,17 +89,17 @@
       {
         bg: "/public/img-2.png",
         style: "slide-center",
-        html: "Era uma vez uma criança muito especial, chamada " + n + ". Este livro é sobre uma descoberta incrível que " + n + " fez... Uma descoberta que mudou tudo!",
+        html: "C'era una volta un bambino molto speciale, di nome " + n + ". Questo libro parla di una scoperta incredibile che " + n + " ha fatto... Una scoperta che ha cambiato tutto!",
       },
       {
         bg: "/public/img-3.png",
         style: "slide-bubble",
-        html: "Outras vezes, quando um trovão fazia \"BUUUM!\", " + n + " sentia um medinho lá no fundo. Para quem podia pedir ajuda quando estava com medo?",
+        html: "Altre volte, quando un tuono faceva \"BUUUM!\", " + n + " sentiva un po' di paura dentro di sé. A chi poteva chiedere aiuto quando aveva paura?",
       },
       {
         bg: "/public/img-4.png",
         style: "slide-bubble",
-        html: n + " perguntou: \"Quem é você?\" A voz respondeu: \"Eu sou Jesus. Eu te amo mais do que todas as estrelas do céu.\"",
+        html: n + " chiese: \"Chi sei tu?\" La voce rispose: \"Sono Gesù. Ti amo più di tutte le stelle del cielo.\"",
       },
     ];
   }
