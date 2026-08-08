@@ -1,8 +1,7 @@
 (function () {
   "use strict";
 
-  // TODO: cole aqui o link real de checkout da Hotmart
-  var HOTMART_CHECKOUT_URL = "https://pay.hotmart.com/SEU-LINK-AQUI";
+  var HOTMART_CHECKOUT_URL = "https://pay.hotmart.com/N41933690F?off=8wcx3bxf&checkoutMode=10";
 
   // ---- visitor id (used by the tracking endpoints) ----
   function getVisitorId() {
