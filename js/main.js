@@ -63,6 +63,8 @@
     screenSales.classList.remove("hidden");
     window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
 
+    if (typeof fbq === "function") fbq("track", "PageView");
+
     updatePreviewSlide();
   });
 
