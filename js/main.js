@@ -67,7 +67,8 @@
   });
 
   // ---- carrossel do preview do livro ----
-  var previewCard = document.querySelector(".preview-text");
+  var previewCardEl = document.getElementById("preview-card");
+  var previewText = document.querySelector(".preview-text");
   var prevBtn = document.querySelector(".carousel-prev");
   var nextBtn = document.querySelector(".carousel-next");
   var slideIndex = 0;
@@ -81,17 +82,32 @@
   function previewSlides(name) {
     var n = "<strong>" + escapeHtml(name) + "</strong>";
     return [
-      "Era uma vez uma criança muito especial, chamada " + n + ". Este livro é sobre uma descoberta incrível que " + n + " fez... Uma descoberta que mudou tudo!",
-      "Outras vezes, quando um trovão fazia \"BUUUM!\", " + n + " sentia um medinho lá no fundo. Para quem podia pedir ajuda quando estava com medo?",
-      n + " perguntou: \"Quem é você?\" A voz respondeu: \"Eu sou Jesus. Eu te amo mais do que todas as estrelas do céu.\"",
+      {
+        bg: "/public/img-2.png",
+        style: "slide-center",
+        html: "Era uma vez uma criança muito especial, chamada " + n + ". Este livro é sobre uma descoberta incrível que " + n + " fez... Uma descoberta que mudou tudo!",
+      },
+      {
+        bg: "/public/img-3.png",
+        style: "slide-bubble",
+        html: "Outras vezes, quando um trovão fazia \"BUUUM!\", " + n + " sentia um medinho lá no fundo. Para quem podia pedir ajuda quando estava com medo?",
+      },
+      {
+        bg: "/public/img-4.png",
+        style: "slide-bubble",
+        html: n + " perguntou: \"Quem é você?\" A voz respondeu: \"Eu sou Jesus. Eu te amo mais do que todas as estrelas do céu.\"",
+      },
     ];
   }
 
   function updatePreviewSlide() {
-    if (!previewCard) return;
+    if (!previewText || !previewCardEl) return;
     var name = sessionStorage.getItem("childName") || "Nome";
     var slides = previewSlides(name);
-    previewCard.innerHTML = slides[slideIndex % slides.length];
+    var slide = slides[slideIndex % slides.length];
+    previewCardEl.style.backgroundImage = "url('" + slide.bg + "')";
+    previewText.className = "preview-text " + slide.style;
+    previewText.innerHTML = slide.html;
   }
 
   if (prevBtn && nextBtn) {
